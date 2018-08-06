@@ -13,17 +13,15 @@ class Knowledge(Base):
 	rating = Column(String)
 
 	def __repr__(self):
-       return ("topic: {}\n"
-               "title: {} \n"
-               "rating: {}").format(
+    	if self.rating >=7:
+		   return ("If you want to learn about: {} "
+               ", you should look at the Wikipedia article called: {} "
+               "We gave this article a rating of {}").format(
                     self.topic, self.title, self.rating)
-
-	# Create a table with 4 columns
-	# The first column will be the primary key
-	# The second column should be a string representing
-	# the name of the Wiki article that you're referencing
-	# The third column will be a string representing the 
-	# topic of the article. The last column will be
-	# an integer, representing your rating of the article.
+	   	else:
+			   return ("If you want to learn about: {} "
+               ", you should look at the Wikipedia article called: {} "
+               "Unfortunately, this article does not have a better rating. Maybe, this is an article that should be replaced soon!.").format(
+                    self.topic, self.title)
 
 	

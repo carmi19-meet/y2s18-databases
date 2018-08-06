@@ -7,9 +7,9 @@ engine = create_engine('sqlite:///knowledge.db')
 Base.metadata.create_all(engine)
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
-
-def add_article():
-	pass
+articals = []
+def add_article(topic, title, rating):
+	
 
 def query_all_articles():
 	pass
