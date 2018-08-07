@@ -10,18 +10,18 @@ class Knowledge(Base):
 	number = Column(Integer, primary_key=True)
 	topic = Column(String)
 	title = Column(String)
-	rating = Column(String)
+	rating = Column(Integer)
 
 	def __repr__(self):
-    	if self.rating >=7:
-		   return ("If you want to learn about: {} "
+		if(self.rating >= "7" ):
+			return("If you want to learn about: {} "
                ", you should look at the Wikipedia article called: {} "
-               "We gave this article a rating of {}").format(
+               ", We gave this article a rating of {}").format(
                     self.topic, self.title, self.rating)
-	   	else:
+		else:
 			   return ("If you want to learn about: {} "
                ", you should look at the Wikipedia article called: {} "
-               "Unfortunately, this article does not have a better rating. Maybe, this is an article that should be replaced soon!.").format(
+               ", Unfortunately, this article does not have a better rating. Maybe, this is an article that should be replaced soon!.").format(
                     self.topic, self.title)
 
 	
